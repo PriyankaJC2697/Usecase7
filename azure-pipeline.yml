@@ -8,7 +8,7 @@ pool:
 
 variables:
   # Variables for your deployment
-  azureSubscription: 'Service Principal'
+  azureSubscription: 'ARM'
   resourceGroupName: 'North Europe'
   deploymentName: 'my-deployment'
   templateFile: 'azuredeploy.json'
