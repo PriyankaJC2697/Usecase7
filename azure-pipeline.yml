@@ -1,0 +1,24 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  # Variables for your deployment
+  azureSubscription: '<your-service-connection-name>'
+  resourceGroupName: '<your-resource-group>'
+  deploymentName: 'my-deployment'
+  templateFile: 'azuredeploy.json'
+  location: 'East US'  # You can adjust this to match your ARM template parameters
+
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: $(azureSubscription)
+    scriptType: 'bash'
+    scriptPath: '$(Build.SourcesDirectory)/deploy.sh'
+    arguments: '-g $(resourceGroupName) -n $(deploymentName) -f $(Build.SourcesDirectory)/$(templateFile) -l $(location)'
+  displayName: 'Deploy ARM Template'
