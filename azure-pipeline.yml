@@ -1,7 +1,7 @@
 trigger:
   branches:
     include:
-      - main
+      - Usecase7
 
 pool:
   vmImage: 'ubuntu-latest'
