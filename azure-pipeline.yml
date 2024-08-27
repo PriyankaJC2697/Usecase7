@@ -8,11 +8,11 @@ pool:
 
 variables:
   # Variables for your deployment
-  azureSubscription: '<your-service-connection-name>'
-  resourceGroupName: '<your-resource-group>'
+  azureSubscription: 'Service Principal'
+  resourceGroupName: 'North Europe'
   deploymentName: 'my-deployment'
   templateFile: 'azuredeploy.json'
-  location: 'East US'  # You can adjust this to match your ARM template parameters
+  location: 'North Europe'  # You can adjust this to match your ARM template parameters
 
 steps:
 - task: AzureCLI@2
